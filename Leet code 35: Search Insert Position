@@ -1,0 +1,20 @@
+n=int(input("Enter the number of elements in list : "))
+print("Enter the List Elements:")
+li=[]
+for i in range(n):
+    a=int(input())
+    li.append(a)
+f=int(input("Enter the element : "))
+if(f in li):
+    print(li.index(f))
+elif(f not in li):
+    if(f>max(li)):
+        li.append(f)
+        print(li.index(f))
+    else:
+        min1=10000
+        for j in range(len(li)):
+            if f-li[j]<0:
+                li.insert(j,f)
+                print(li.index(f))
+                break
