@@ -1,0 +1,26 @@
+n=int(input())
+found=[]
+for i in range(n):
+    l=input().split(" ")
+    M=int(l[0])
+    N=int(l[1])
+    A=input()
+    B=input()
+    for ch in A:
+        if ch not in B:
+            A=A.replace(ch,"")
+    C=""
+    count=0
+    while(len(A)>=len(B)):
+        for j in B:
+            if j in A:
+                C=C+j
+                A=A.replace(j,"",1)
+                if(C==B):
+                    count=count+1
+                    C=""
+            else:
+                break
+    found.append(count)
+for x in found:
+    print(x)
